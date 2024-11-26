@@ -24,11 +24,5 @@ public:
             q--;
             r--;
         }
-
-        while (p >= 0) {
-            nums1[r] = nums1[p];
-            p--;
-            r--;
-        }
     }
 };
