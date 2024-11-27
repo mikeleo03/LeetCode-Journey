@@ -14,8 +14,8 @@ public:
             if (!isalnum(s[front])) {front++; continue;}
             if (!isalnum(s[back])) {back--; continue;}
             
-            if (tolower(s[front]) != tolower(s[back])) { return false;
-            } else { front++; back--; };
+            if (tolower(s[front]) != tolower(s[back])) { return false; } 
+            else { front++; back--; };
         }
 
         return isPal;
