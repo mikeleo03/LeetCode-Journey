@@ -1,51 +1,49 @@
-#include <vector>
-#include <unordered_map>
-#include <cstdlib> // For rand()
-using namespace std;
-
 class RandomizedSet {
-private:
-    vector<int> nums; // Store elements
-    unordered_map<int, int> indices; // Map value -> index in nums
-
+    vector<int> v;
+    unordered_map<int,int> mp;
 public:
-    RandomizedSet() {}
+   
+    RandomizedSet() {
+    }
 
-    // Inserts a value. Returns true if the value was not already present.
+    bool search(int val){
+
+         if(mp.find(val)!=mp.end())
+            return true;
+         return false;
+
+    }
+
+    
     bool insert(int val) {
-        if (indices.find(val) != indices.end()) {
-            return false; // Value already exists
-        }
-        nums.push_back(val);              // Add value to the vector
-        indices[val] = nums.size() - 1;   // Store the index of the value
+
+        if(search(val))
+            return false;
+
+        v.push_back(val);
+        mp[val] = v.size()-1;
         return true;
     }
 
-    // Removes a value. Returns true if the value was present.
+    
     bool remove(int val) {
-        if (indices.find(val) == indices.end()) {
-            return false; // Value does not exist
-        }
-        int idx = indices[val];           // Index of the value to remove
-        int last = nums.back();           // Last element in the vector
-        nums[idx] = last;                 // Move the last element to the removed position
-        indices[last] = idx;              // Update the index of the moved element
-        nums.pop_back();                  // Remove the last element
-        indices.erase(val);               // Erase the value from the map
+
+        if(!search(val))
+            return false;
+
+       
+        auto it = mp.find(val);
+        v[it->second] = v.back();
+        v.pop_back();
+        mp[v[it->second]] = it->second;
+        mp.erase(val);
         return true;
     }
 
-    // Returns a random element.
+   
     int getRandom() {
-        int randomIndex = rand() % nums.size(); // Generate a random index
-        return nums[randomIndex];
+
+        return v[rand()%v.size()];
     }
 };
 
-/**
- * Your RandomizedSet object will be instantiated and called as such:
- * RandomizedSet* obj = new RandomizedSet();
- * bool param_1 = obj->insert(val);
- * bool param_2 = obj->remove(val);
- * int param_3 = obj->getRandom();
- */
