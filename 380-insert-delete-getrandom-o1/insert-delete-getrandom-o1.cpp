@@ -2,7 +2,6 @@ class RandomizedSet {
     vector<int> v;
     unordered_map<int,int> mp;
 public:
-   
     RandomizedSet() {}
 
     bool search(int val){
