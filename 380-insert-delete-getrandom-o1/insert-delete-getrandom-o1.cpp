@@ -4,12 +4,12 @@ class RandomizedSet {
 public:
     RandomizedSet() {}
 
-    bool search (int val){
+    bool search (int val) {
         if (mp.find(val) != mp.end()) return true;
         return false;
     }
 
-    bool insert (int val) {
+    bool insert(int val) {
         if (search(val)) return false;
         v.push_back(val);
         mp[val] = v.size() - 1;
