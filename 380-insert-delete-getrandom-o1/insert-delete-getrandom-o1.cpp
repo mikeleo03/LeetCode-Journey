@@ -3,8 +3,7 @@ class RandomizedSet {
     unordered_map<int,int> mp;
 public:
    
-    RandomizedSet() {
-    }
+    RandomizedSet() {}
 
     bool search(int val){
 
