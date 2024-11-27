@@ -10,14 +10,10 @@ public:
         return false;
     }
 
-    
     bool insert(int val) {
-
-        if(search(val))
-            return false;
-
+        if (search(val)) return false;
         v.push_back(val);
-        mp[val] = v.size()-1;
+        mp[val] = v.size() - 1;
         return true;
     }
 
