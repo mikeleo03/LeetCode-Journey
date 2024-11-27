@@ -6,11 +6,8 @@ public:
     RandomizedSet() {}
 
     bool search(int val){
-
-         if(mp.find(val)!=mp.end())
-            return true;
-         return false;
-
+        if (mp.find(val) != mp.end()) return true;
+        return false;
     }
 
     
