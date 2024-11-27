@@ -16,7 +16,6 @@ public:
         mp[val] = v.size() - 1;
         return true;
     }
-
     
     bool remove(int val) {
         if (!search(val)) return false;
