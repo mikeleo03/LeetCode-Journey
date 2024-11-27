@@ -1,11 +1,10 @@
 class RandomizedSet {
     vector<int> v;
     unordered_map<int,int> mp;
-
 public:
     RandomizedSet() {}
 
-    bool search(int val){
+    bool search (int val){
         if (mp.find(val) != mp.end()) return true;
         return false;
     }
