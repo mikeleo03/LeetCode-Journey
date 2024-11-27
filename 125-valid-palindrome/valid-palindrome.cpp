@@ -16,9 +16,7 @@ public:
             
             if (tolower(s[front]) != tolower(s[back])) {
                 return false;
-            } else {
-                front++; back--;
-            };
+            } else { front++; back--; };
         }
 
         return isPal;
