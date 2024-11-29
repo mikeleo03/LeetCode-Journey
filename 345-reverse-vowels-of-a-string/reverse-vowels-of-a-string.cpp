@@ -14,9 +14,7 @@ public:
 
         while (front < back) {
             if (isVowel(s[front]) && isVowel(s[back])) {
-                char temp = s[front];
-                s[front] = s[back];
-                s[back] = temp;
+                swap(s[front], s[back]);
                 front++; 
                 back--;
             }
