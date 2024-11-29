@@ -17,7 +17,8 @@ public:
                 char temp = s[front];
                 s[front] = s[back];
                 s[back] = temp;
-                front++; back--;
+                front++; 
+                back--;
             }
             if (!isVowel(s[front])) front++;
             if (!isVowel(s[back])) back--;
