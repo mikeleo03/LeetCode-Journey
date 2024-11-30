@@ -10,13 +10,8 @@ public:
             int currentArea = 0;
 
             // compare tinggi
-            if (height[front] > height[back]) {
-                currentArea = height[back] * (back - front); 
-                back--;
-            } else {
-                currentArea = height[front] * (back - front); 
-                front++;
-            }
+            currentArea = min(height[back], height[front]) * (back - front); 
+            height[front] > height[back] ? back-- : front++;
 
             if (currentArea > area) area = currentArea;
         }
