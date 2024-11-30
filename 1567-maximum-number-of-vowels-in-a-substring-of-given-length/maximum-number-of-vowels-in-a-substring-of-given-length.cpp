@@ -10,7 +10,7 @@ public:
 
         while (j < s.length()) {
             if (isVowel(s[j])) v++;
-            if (j - i + 1 < k) { j++; } 
+            if (j - i + 1 < k) { j++;} 
             else {
                 mv = max(mv, v);
                 if (isVowel(s[i])) v--;
