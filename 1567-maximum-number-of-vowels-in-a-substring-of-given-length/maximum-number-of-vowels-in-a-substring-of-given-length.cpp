@@ -13,6 +13,7 @@ public:
             if (isVowel(s[i])) vows++;
             if (i > k - 1 && isVowel(s[i - k])) vows--;
             maxVows = max(maxVows, vows);
+            if (maxVows == k) return maxVows;
         }
 
         return maxVows;
