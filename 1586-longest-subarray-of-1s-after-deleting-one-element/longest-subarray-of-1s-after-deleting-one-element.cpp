@@ -2,7 +2,8 @@ class Solution {
 public:
     int longestSubarray(vector<int>& nums) {
         int maxlen = 0;
-        int left = 0; int right = 0; bool flipped = false;
+        int left = 0; int right = 0; 
+        bool flipped = false;
 
         while (right < nums.size()) {
             if (nums[right] == 0) {
