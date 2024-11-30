@@ -5,8 +5,8 @@ public:
     }
 
     int maxVowels(string s, int k) {
-        int mv = INT_MIN; 
-        int v = 0; int i = 0; int j = 0;
+        int mv = INT_MIN; int v = 0; 
+        int i = 0; int j = 0;
 
         while (j < s.length()) {
             if (isVowel(s[j])) v++;
