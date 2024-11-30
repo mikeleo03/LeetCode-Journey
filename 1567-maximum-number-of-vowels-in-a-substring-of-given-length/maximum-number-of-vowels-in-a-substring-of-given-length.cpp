@@ -11,11 +11,7 @@ public:
 
         for (int i = 0; i < s.size(); i++) {
             if (isVowel(s[i])) vows++;
-
-            if (i > k - 1) {
-                if (isVowel(s[i - k])) vows--;
-            }
-
+            if (i > k - 1 && isVowel(s[i - k])) vows--;
             maxVows = max(maxVows, vows);
         }
 
