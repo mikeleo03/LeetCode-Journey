@@ -6,8 +6,7 @@ public:
 
         for (int num : nums2) {
             if (map1.find(num) != map1.end()) {
-                map1.erase(num);
-                map2.erase(num);
+                map1.erase(num); map2.erase(num);
             }
         }
 
