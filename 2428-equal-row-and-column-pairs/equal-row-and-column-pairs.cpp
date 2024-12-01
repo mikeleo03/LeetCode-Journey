@@ -12,7 +12,6 @@ public:
                 arr[j] = grid[j][i];
             }
 
-            // check is it exist on set
             order[grid[i]]++; order2[arr]++;
         }
 
