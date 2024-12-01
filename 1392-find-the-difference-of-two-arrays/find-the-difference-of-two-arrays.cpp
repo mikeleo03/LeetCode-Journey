@@ -4,7 +4,7 @@ public:
         unordered_set<int> map1(nums1.begin(), nums1.end());
         unordered_set<int> map2(nums2.begin(), nums2.end());
 
-        for (int num : nums2) {
+        for (int num : nums2){
             if (map1.find(num) != map1.end()) {
                 map1.erase(num); 
                 map2.erase(num);
