@@ -10,6 +10,6 @@ public:
             }
         }
 
-        return { vector<int>(map1.begin(), map1.end()), vector<int>(map2.begin(), map2.end()) };
+        return {vector<int>(map1.begin(), map1.end()), vector<int>(map2.begin(), map2.end())};
     }
 };
