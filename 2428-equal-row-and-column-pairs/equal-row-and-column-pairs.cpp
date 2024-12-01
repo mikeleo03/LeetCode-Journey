@@ -13,8 +13,7 @@ public:
             }
 
             // check is it exist on set
-            order[grid[i]]++;
-            order2[arr]++;
+            order[grid[i]]++; order2[arr]++;
         }
 
         for (auto it : order) {
