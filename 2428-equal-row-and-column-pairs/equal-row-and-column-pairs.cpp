@@ -16,7 +16,7 @@ public:
             }
             count += order[arr];
         }
-
+        
         return count;
     }
 };
