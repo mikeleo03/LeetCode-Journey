@@ -1,34 +1,20 @@
 class Solution {
 public:
     bool closeStrings(string word1, string word2) {
-        map<char, int> map1;
-        map<char, int> map2;
-        map<int, int> count1;
-        map<int, int> count2;
+        unordered_map<char, int> map1;
+        unordered_map<char, int> map2;
+        unordered_map<int,vector<char>> count1;
+        unordered_map<int,vector<char>> count2;
 
         // initial size check
         if (word1.length() != word2.length()) return false;
 
         for (int i = 0; i < word1.size(); i++) {
-            if (map1.find(word1[i]) != map1.end()) {
-                count1[map1[word1[i]]]--;
-                map1[word1[i]]++;
-                count1[map1[word1[i]]]++;
-            } else {
-                map1[word1[i]] = 1;
-                count1[1]++;
-            }
+            map1[word1[i]]++;
         }
 
         for (int i = 0; i < word2.size(); i++) {
-            if (map2.find(word2[i]) != map2.end()) {
-                count2[map2[word2[i]]]--;
-                map2[word2[i]]++;
-                count2[map2[word2[i]]]++;
-            } else {
-                map2[word2[i]] = 1;
-                count2[1]++;
-            }
+            map2[word2[i]]++;
         }
 
         // checks
@@ -38,53 +24,30 @@ public:
         if (map1.size() != map2.size()) return false;
 
         // Operator 1
-        // Iterate through the first map
-        for (const auto& [key, value] : map1) {
-            // Check if the key exists in the second map
-            if (map2.count(key)) {
-                // Compare values for shared keys
-                if (map2.at(key) != value) {
-                    valuesMatch = false;
-                }
-            } else {
-                // Key is in map1 but not in map2
-                return false;
-            }
+        for (auto it : map1) {
+            if (map2.find(it.first) == map2.end()) return false;
+            if (it.second != map2[it.first]) { valuesMatch = false; }
         }
 
-        // Check if all keys in map2 are also in map1
-        for (const auto& [key, value] : map2) {
-            if (map1.count(key) == 0) {
-                valuesMatch = false;
-                break;
-            }
-        }
-
-        if (valuesMatch) { return valuesMatch; } else { valuesMatch = true; }
+        if (valuesMatch) { return true; } else { valuesMatch = true; }
 
         // Operator 2
+        for (auto it : map1) {
+            count1[it.second].push_back(it.first);
+        }
+        for (auto it : map2) {
+            count2[it.second].push_back(it.first);
+        }
+
         // Iterate through the first map
-        for (const auto& [key, value] : count1) {
-            // Check if the key exists in the second map
-            if (count2.count(key)) {
-                // Compare values for shared keys
-                if (count2.at(key) != value) {
-                    valuesMatch = false;
-                }
-            } else {
-                // Key is in map1 but not in map2
+        for (auto it : count1) {
+            if (count2.find(it.first) == count2.end()) {
+                return false;
+            } else if (it.second.size() != count2[it.first].size()) { 
                 return false;
             }
         }
 
-        // Check if all keys in map2 are also in map1
-        for (const auto& [key, value] : count2) {
-            if (count1.count(key) == 0) {
-                valuesMatch = false;
-                break;
-            }
-        }
-
-        return valuesMatch;
+        return true;
     }
 };
