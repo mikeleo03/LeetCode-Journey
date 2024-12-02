@@ -14,6 +14,7 @@ public:
             for (int j = 0; j < grid.size(); j++) {
                 arr[j] = grid[j][i];
             }
+            
             count += order[arr];
         }
         
