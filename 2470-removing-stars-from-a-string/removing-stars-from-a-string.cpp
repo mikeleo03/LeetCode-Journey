@@ -5,7 +5,6 @@ public:
         for (char ch : s) {
             ch == '*' ? index-- : s[index++] = ch;
         }
-        
         return s.substr(0,index);
     }
 };
