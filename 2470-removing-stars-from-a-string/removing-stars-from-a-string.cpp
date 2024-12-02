@@ -9,10 +9,11 @@ public:
         }
 
         while (!q.empty()) {
-            res.insert(res.begin(), q.top());
+            res += q.top();
             q.pop();
         }
 
+        reverse(res.begin(),res.end());
         return res;
     }
 };
