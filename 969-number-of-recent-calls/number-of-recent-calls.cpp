@@ -10,6 +10,7 @@ public:
         while (q.front() < t - 3000) {
             q.pop(); this->counter--;
         }
+        
         return this->counter;
     }
 };
