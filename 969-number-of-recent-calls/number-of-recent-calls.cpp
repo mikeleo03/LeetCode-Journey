@@ -9,7 +9,6 @@ public:
     
     int ping(int t) {
         this->counter++; q.push(t);
-
         while (q.front() < t - 3000) {
             q.pop(); this->counter--;
         }
