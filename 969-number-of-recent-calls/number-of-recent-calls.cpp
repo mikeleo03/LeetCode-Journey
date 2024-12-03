@@ -1,7 +1,7 @@
 class RecentCounter {
 public:
     int counter;
-    std::queue<int> pings;
+    queue<int> pings;
     
     RecentCounter() : counter(0) {}
     
