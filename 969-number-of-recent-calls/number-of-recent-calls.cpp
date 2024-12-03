@@ -11,6 +11,7 @@ class RecentCounter {
             while (records[start] < t - 3000) {
                 start++;
             }
+            
             return records.size() - start;
         }
 };
