@@ -3,7 +3,9 @@ public:
     queue<int> q;
     int counter;
 
-    RecentCounter() : counter(0) {}
+    RecentCounter() {
+        counter = 0;
+    }
     
     int ping(int t) {
         this->counter++; 
