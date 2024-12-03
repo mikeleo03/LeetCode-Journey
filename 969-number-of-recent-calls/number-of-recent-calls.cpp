@@ -10,8 +10,7 @@ public:
         this->counter++;
         pings.push(t);
         while (t - 3000 > pings.front()) {
-            pings.pop();
-            this->counter--;
+            pings.pop(); this->counter--;
         }
         return this->counter;
     }
