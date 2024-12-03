@@ -18,11 +18,11 @@ public:
 
         vector<int> res(s.size());
         int i = s.size() - 1;
-
         while (!s.empty()) {
             res[i--] = s.top();
             s.pop();
         }
+        
         return res;
     }
 };
