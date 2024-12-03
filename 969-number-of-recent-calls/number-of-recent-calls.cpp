@@ -9,6 +9,7 @@ public:
         while (q.front() < t - 3000) {
             q.pop();
         }
+        
         return q.size();
     }
 };
