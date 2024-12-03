@@ -1,15 +1,24 @@
 class RecentCounter {
 public:
+    queue<int> q;
     int counter;
-    queue<int> pings;
-    
-    RecentCounter() : counter(0) {}
+
+    RecentCounter() { counter = 0; }
     
     int ping(int t) {
-        this->counter++; pings.push(t);
-        while (t - 3000 > pings.front()) {
-            pings.pop(); this->counter--;
+        this->counter++;
+        q.push(t);
+        while (q.front() < t - 3000) {
+            q.pop();
+            this->counter--;
         }
+        
         return this->counter;
     }
 };
+
+/**
+ * Your RecentCounter object will be instantiated and called as such:
+ * RecentCounter* obj = new RecentCounter();
+ * int param_1 = obj->ping(t);
+ */
