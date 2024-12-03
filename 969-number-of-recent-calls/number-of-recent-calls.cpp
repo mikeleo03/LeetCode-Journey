@@ -8,9 +8,7 @@ class RecentCounter {
 
         int ping(int t) {
             records.push_back(t);
-            while (records[start] < t - 3000) {
-                start++;
-            }
+            while (records[start] < t - 3000) start++;
             
             return records.size() - start;
         }
