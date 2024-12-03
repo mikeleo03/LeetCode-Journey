@@ -11,6 +11,7 @@ public:
             q.pop();
             this->counter--;
         }
+        
         return this->counter;
     }
 };
