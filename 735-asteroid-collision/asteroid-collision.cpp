@@ -11,13 +11,8 @@ public:
                     s.pop();
                 }
 
-                if (s.empty() || s.top() < 0) {
-                    s.push(ast);
-                }
-
-                if (!s.empty() && s.top() == -ast) {
-                    s.pop();
-                }
+                if (s.empty() || s.top() < 0) s.push(ast);
+                if (!s.empty() && s.top() == -ast) s.pop();
             }
         }
 
