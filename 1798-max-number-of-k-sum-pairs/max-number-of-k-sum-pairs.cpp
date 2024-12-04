@@ -8,8 +8,7 @@ public:
             int res = k - nums[i];
             if (map.find(res) != map.end()) {
                 counter++;
-                if (map[res] == 1) map.erase(res);
-                else map[res]--;
+                map[res] == 1 ? map.erase(res) : map[res]--;
             } else {
                 map[nums[i]]++;
             }
