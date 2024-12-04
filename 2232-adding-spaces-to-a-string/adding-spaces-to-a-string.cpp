@@ -4,7 +4,7 @@ public:
         const int m = spaces.size(), n = s.size();
         string t(n + m, ' ');
         
-        int j = 0; // space pointer
+        int j = 0;
         for (int i = 0; i < n; i++) {
             if (j < m && i == spaces[j]) j++;
             t[i + j] = s[i];
