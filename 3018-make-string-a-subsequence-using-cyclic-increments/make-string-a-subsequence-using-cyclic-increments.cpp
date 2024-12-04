@@ -10,6 +10,7 @@ public:
         for (int p1 = 0; p1 < str1.length(); p1++) {
             if (str1[p1] == str2[p2] || cyclicIncrement(str1[p1]) == str2[p2]) p2++;
         }
+        
         return (p2 == str2.length());
     }
 };
