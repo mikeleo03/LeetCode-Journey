@@ -7,7 +7,7 @@ public:
         int j = 0; // space pointer
         for (int i = 0; i < n; i++) {
             if (j < m && i == spaces[j]) j++; // Move to the next space index
-            t[i + j] = s[i]; // Add the character from the original string
+            t[i + j] = s[i];
         }
         return t;
     }
