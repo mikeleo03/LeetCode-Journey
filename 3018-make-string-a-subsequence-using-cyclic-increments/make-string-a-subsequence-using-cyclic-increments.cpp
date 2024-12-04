@@ -14,7 +14,6 @@ public:
                 p1++;
             }
         }
-
         return (p2 == str2.length());
     }
 };
