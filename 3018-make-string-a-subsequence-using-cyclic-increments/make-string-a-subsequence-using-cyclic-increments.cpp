@@ -5,12 +5,15 @@ public:
     }
 
     bool canMakeSubsequence(string str1, string str2) {
-        int p2 = 0;
+        int m = str1.size(), n = str2.size(); int p2 = 0;
+        if (m < n) return false;
 
-        for (int p1 = 0; p1 < str1.length(); p1++) {
-            if (str1[p1] == str2[p2] || cyclicIncrement(str1[p1]) == str2[p2]) p2++;
+        for (int p1 = 0; p1 < m && p2 < n; p1++) {
+            if (str1[p1] == str2[p2] || 
+                str1[p1] + 1 == str2[p2] ||
+                str1[p1] - 25 == str2[p2]) p2++;
         }
-        
-        return (p2 == str2.length());
+
+        return p2 == n;
     }
 };
