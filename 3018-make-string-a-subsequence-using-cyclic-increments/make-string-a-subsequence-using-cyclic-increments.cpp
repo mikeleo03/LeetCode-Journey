@@ -1,13 +1,19 @@
 class Solution {
 public:
-    bool canMakeSubsequence(string source, string target) {
-        int targetIdx = 0;
-        int targetLen = target.length();
-        for (char currChar : source) {
-            if (targetIdx < targetLen && (target[targetIdx] - currChar + 26) % 26 <= 1) {
-                targetIdx++;
+    char cyclicIncrement(char c) {
+        return (c - 'a' + 1) % 26 + 'a';
+    }
+
+    bool canMakeSubsequence(string str1, string str2) {
+        int p1 = 0; int p2 = 0;
+
+        while (p1 < str1.length()) {
+            if (str1[p1] == str2[p2] || cyclicIncrement(str1[p1]) == str2[p2]) {
+                p1++; p2++;
+            } else {
+                p1++;
             }
         }
-        return targetIdx == targetLen;
+        return (p2 == str2.length());
     }
 };
