@@ -8,8 +8,7 @@ public:
             if (strs[i] < strs[shortest]) shortest = i;
         }
 
-        int curr = 0;
-        bool valid = true;
+        int curr = 0; bool valid = true;
         while (valid && curr < strs[shortest].length()) {
             char currChar = strs[shortest][curr];
             for (int i = 0; i < strs.size(); i++) {
