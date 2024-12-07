@@ -7,8 +7,7 @@ public:
         sort(nums.begin(), nums.end());
 
         for (int small = 0; small < nums.size(); small++) {
-            int mid = small + 1;
-            int large = nums.size() - 1;
+            int mid = small + 1; int large = nums.size() - 1;
             
             // calc the current sum
             while (mid < large) {
