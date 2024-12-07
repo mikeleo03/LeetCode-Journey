@@ -8,7 +8,6 @@ public:
         sort(nums.begin(), nums.end());
 
         for (int small = 0; small < nums.size(); small++) {
-            int remaining = target - nums[small];
             int mid = small + 1;
             int large = nums.size() - 1;
             
