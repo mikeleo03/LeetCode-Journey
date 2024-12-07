@@ -1,8 +1,7 @@
 class Solution {
 public:
     int threeSumClosest(vector<int>& nums, int target) {
-        int minimum = INT_MAX;
-        int sign = 1;
+        int minimum = INT_MAX; int sign = 1;
 
         // Sort the nums array
         sort(nums.begin(), nums.end());
