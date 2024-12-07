@@ -13,7 +13,6 @@ public:
             while (mid < large) {
                 int currentSum = nums[small] + nums[mid] + nums[large];
                 currentSum < target ? mid++ : large--;
-
                 // calc the minimum gap
                 if (minimum > abs(currentSum - target)) {
                     minimum = abs(currentSum - target);
