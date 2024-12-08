@@ -13,17 +13,15 @@ class Solution {
 public:
     void traverse(TreeNode* tree, int& maximum, int& count) {
         if (!tree) return;
-        // cout << "val " << tree->val << endl;
+
         if (maximum <= tree->val) {
             maximum = tree->val;
-            // cout << "max " << maximum << endl;
             count++;
         }
 
         int maximum2 = maximum;
         traverse(tree->left, maximum, count);
         maximum = maximum2;
-        // cout << "reset " << maximum << endl;
         traverse(tree->right, maximum, count);
     }
 
