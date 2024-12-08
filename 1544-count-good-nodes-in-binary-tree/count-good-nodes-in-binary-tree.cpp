@@ -13,7 +13,6 @@ class Solution {
 public:
     void traverse(TreeNode* tree, int& maximum, int& count) {
         if (!tree) return;
-
         if (maximum <= tree->val) {
             maximum = tree->val;
             count++;
