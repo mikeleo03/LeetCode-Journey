@@ -19,10 +19,10 @@ public:
 
         sum += tree->val;
         res.push_back(tree->val);
-        traverse(tree->left, sum, res);
         if (!tree->left && !tree->right) {
             if (sum == target) valid.push_back(res);
         }
+        traverse(tree->left, sum, res);
         traverse(tree->right, sum, res);
         res.pop_back();
     }
