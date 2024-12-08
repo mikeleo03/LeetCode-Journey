@@ -25,8 +25,7 @@ public:
     }
 
     int goodNodes(TreeNode* root) {
-        int maximum = root->val;
-        int count = 0;
+        int maximum = root->val; int count = 0;
 
         traverse(root, maximum, count);
         return count;
