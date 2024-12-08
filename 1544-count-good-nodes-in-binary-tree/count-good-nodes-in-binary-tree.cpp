@@ -11,22 +11,19 @@
  */
 class Solution {
 public:
-    void traverse(TreeNode* tree, int& maximum, int& count) {
-        if (!tree) return;
-        if (maximum <= tree->val) {
-            maximum = tree->val;
-            count++;
-        }
+    int count = 0;
 
-        int maximum2 = maximum;
-        traverse(tree->left, maximum, count);
-        maximum = maximum2;
-        traverse(tree->right, maximum, count);
+    void traverse(TreeNode* tree, int maximum) {
+        if (!tree) return;
+        if (tree->val >= maximum) count++;
+        if (!tree->left && !tree->right) return;
+        maximum = max(maximum, tree->val);
+        traverse(tree->left, maximum);
+        traverse(tree->right, maximum);
     }
 
     int goodNodes(TreeNode* root) {
-        int maximum = root->val; int count = 0;
-        traverse(root, maximum, count);
+        traverse(root, INT_MIN);
         return count;
     }
 };
