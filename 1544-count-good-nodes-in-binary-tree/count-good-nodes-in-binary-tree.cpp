@@ -17,6 +17,7 @@ public:
         if (!tree) return;
         if (tree->val >= maximum) count++;
         if (!tree->left && !tree->right) return;
+        
         maximum = max(maximum, tree->val);
         traverse(tree->left, maximum);
         traverse(tree->right, maximum);
