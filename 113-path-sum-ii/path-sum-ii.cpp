@@ -17,18 +17,14 @@ public:
     void traverse(TreeNode* tree, int sum, vector<int>& res) {
         if (!tree) return;
 
-        // cout << tree->val << endl;
         sum += tree->val;
         res.push_back(tree->val);
         traverse(tree->left, sum, res);
-        // cout << sum << endl;
         if (!tree->left && !tree->right) {
-            // cout << sum << endl;
             if (sum == target) valid.push_back(res);
         }
         traverse(tree->right, sum, res);
         res.pop_back();
-        // res.erase(remove(res.begin(), res.end(), tree->val), res.end());
     }
 
     vector<vector<int>> pathSum(TreeNode* root, int targetSum) {
