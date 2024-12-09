@@ -21,7 +21,6 @@ public:
         if (mp.find(prefixSum - targetSum) != mp.end()) {
             count += mp[prefixSum - targetSum];
         }
-
         mp[prefixSum]++;
         traverse(tree->left, targetSum, prefixSum);
         traverse(tree->right, targetSum, prefixSum);
