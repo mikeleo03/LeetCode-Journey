@@ -17,6 +17,7 @@ public:
     void traverse(TreeNode* tree, int targetSum, long prefixSum) {
         if (!tree) return;
         prefixSum += tree->val;
+        
         if (mp.find(prefixSum - targetSum) != mp.end()) count += mp[prefixSum - targetSum];
         mp[prefixSum]++;
         traverse(tree->left, targetSum, prefixSum);
