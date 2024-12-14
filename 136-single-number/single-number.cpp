@@ -1,14 +1,18 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        unordered_map<int, int> map;
+        unordered_set<int> map;
 
         for (int num : nums) {
-            map[num]++;
+            if (map.find(num) != map.end()) {
+                map.erase(num);
+            } else {
+                map.insert(num);
+            }
         }
 
         for (auto it = map.begin(); it != map.end(); it++) {
-            if (it->second == 1) return it->first;
+            return *it;
         }
 
         return -1;
