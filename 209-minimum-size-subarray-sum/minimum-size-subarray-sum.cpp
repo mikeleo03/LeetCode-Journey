@@ -5,7 +5,6 @@ public:
         int front = 0; int back = 0;
         int sum = nums[front]; 
         int minSize = INT_MAX;
-        bool shrinked = false;
 
         while (front < nums.size() && back < nums.size()) {
             if (sum < target) {
@@ -18,7 +17,6 @@ public:
                 minSize = min(minSize, front - back + 1);
                 sum -= nums[back];
                 back++;
-                shrinked = true;
             } 
         }
 
